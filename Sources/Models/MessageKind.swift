@@ -59,7 +59,9 @@ public enum MessageKind {
 
     /// A link preview message.
     case linkPreview(LinkItem)
-
+    
+    
+    case topic(TopicItem)
     /// A custom message.
     /// - Note: Using this case requires that you implement the following methods and handle this case:
     ///   - MessagesDataSource: customCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell
