@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol TopicItem {
     
@@ -15,4 +16,6 @@ public protocol TopicItem {
     var topicId: String { get }
     
     var isReply: Bool { get }
+    
+    var size: CGSize { get }
 }
