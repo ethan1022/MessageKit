@@ -39,7 +39,6 @@ open class TopicMessageCell: MessageContentCell {
     
     public lazy var saperatorView: UIView = {
         let saperatorView = UIView(frame: .zero)
-        saperatorView.backgroundColor = UIColor(hex: 0xF5F7F8)
         return saperatorView
     }()
     
@@ -101,9 +100,11 @@ open class TopicMessageCell: MessageContentCell {
         if !dataSource.isFromCurrentSender(message: message) {
             iconImageView.image = UIImage(named: "IncomeTopicMsgIcon")
             replyButton.setTitleColor(UIColor(hex: 0xF8A56D), for: .normal)
+            saperatorView.backgroundColor = UIColor(hex: 0xD1D2D3)
         } else {
             iconImageView.image = UIImage(named: "OutgoingTopicMsgIcon")
             replyButton.setTitleColor(UIColor(hex: 0x343637), for: .normal)
+            saperatorView.backgroundColor = UIColor(hex: 0xD69F7A)
         }
         
         guard let displayDelegate = messagesCollectionView.messagesDisplayDelegate else {
