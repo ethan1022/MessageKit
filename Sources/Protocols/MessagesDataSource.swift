@@ -169,6 +169,9 @@ public protocol MessagesDataSource: AnyObject {
     ///   This method will return nil by default. You must override this method only if you want your own cell.
     func contactCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell?
     
+    /// Topic collectionView cell for message with `topic` message type.
+    func topicCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell?
+    
     /// Custom collectionView cell for message with `custom` message type.
     ///
     /// - Parameters:
@@ -245,6 +248,10 @@ public extension MessagesDataSource {
     }
     
     func contactCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell? {
+        return nil
+    }
+    
+    func topicCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell? {
         return nil
     }
     

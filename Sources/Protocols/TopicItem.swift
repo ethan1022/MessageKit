@@ -8,5 +8,11 @@
 import Foundation
 
 public protocol TopicItem {
-
+    
+    /// Topic text.
+    var topicDescription: String { get }
+    
+    var topicId: String { get }
+    
+    var isReply: Bool { get }
 }

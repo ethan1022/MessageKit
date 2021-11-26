@@ -188,6 +188,8 @@ public protocol MessagesDisplayDelegate: AnyObject {
     /// - Note:
     ///   This protocol method is called by MessageKit every time an audio cell needs to be configure
     func configureAudioCell(_ cell: AudioMessageCell, message: MessageType)
+    
+    func configureTopicCell(_ cell: TopicMessageCell, message: MessageType)
 
     /// Specifies the tint color of play button and progress bar for an `AudioMessageCell`.
     ///
@@ -297,6 +299,10 @@ public extension MessagesDisplayDelegate {
     // MARK: - Audio Message Defaults
     
     func configureAudioCell(_ cell: AudioMessageCell, message: MessageType) {
+        
+    }
+    
+    func configureTopicCell(_ cell: TopicMessageCell, message: MessageType) {
         
     }
 
