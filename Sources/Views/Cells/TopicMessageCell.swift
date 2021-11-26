@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicMessageCell: MessageContentCell {
+open class TopicMessageCell: MessageContentCell {
     
     public lazy var replyButton: UIButton = {
         let replyButton = UIButton(type: .system)
@@ -17,7 +17,7 @@ class TopicMessageCell: MessageContentCell {
     
     public lazy var questionLabel: UILabel = {
         let questionLabel = UILabel(frame: .zero)
-        questionLabel.textColor = .mingleTimeGray900
+        questionLabel.textColor = UIColor(hex: 0x343637)
         questionLabel.numberOfLines = 0
         return questionLabel
     }()
@@ -30,7 +30,7 @@ class TopicMessageCell: MessageContentCell {
     
     public lazy var isReplyLabel: UILabel = {
         let isReplyLabel = UILabel(frame: .zero)
-        isReplyLabel.textColor = .mingleTimeGray900
+        isReplyLabel.textColor = UIColor(hex: 0x343637)
         isReplyLabel.font = UIFont.systemFont(ofSize: 17)
         isReplyLabel.numberOfLines = 1
 //        isReplyLabel.text = "兩人都已經回應話題！"
@@ -39,7 +39,7 @@ class TopicMessageCell: MessageContentCell {
     
     public lazy var saperatorView: UIView = {
         let saperatorView = UIView(frame: .zero)
-        saperatorView.backgroundColor = .mingleTimeGray100
+        saperatorView.backgroundColor = UIColor(hex: 0xF5F7F8)
         return saperatorView
     }()
     
@@ -100,10 +100,10 @@ class TopicMessageCell: MessageContentCell {
         
         if !dataSource.isFromCurrentSender(message: message) {
             iconImageView.image = UIImage(named: "IncomeTopicMsgIcon")
-            replyButton.setTitleColor(.mingleTimePrimaryOrange, for: .normal)
+            replyButton.setTitleColor(UIColor(hex: 0xF8A56D), for: .normal)
         } else {
             iconImageView.image = UIImage(named: "OutgoingTopicMsgIcon")
-            replyButton.setTitleColor(.mingleTimeGray900, for: .normal)
+            replyButton.setTitleColor(UIColor(hex: 0x343637), for: .normal)
         }
         
         guard let displayDelegate = messagesCollectionView.messagesDisplayDelegate else {
