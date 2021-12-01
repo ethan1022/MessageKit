@@ -400,6 +400,14 @@ UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIGestureRecogni
                 cell.configure(with: message, at: indexPath, and: messagesCollectionView)
                 return cell
             }
+        case .topicUpdate:
+            if let cell = messagesDataSource.topicUpdateCell(for: message, at: indexPath, in: messagesCollectionView) {
+                return cell
+            } else {
+                let cell = messagesCollectionView.dequeueReusableCell(TopicUpdateMessageCell.self, for: indexPath)
+                cell.configure(with: message, at: indexPath, and: messagesCollectionView)
+                return cell
+            }
         case .custom:
             return messagesDataSource.customCell(for: message, at: indexPath, in: messagesCollectionView)
         }
