@@ -211,6 +211,8 @@ public protocol MessagesLayoutDelegate: AnyObject {
     func customCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator
     
     func topicCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator?
+    
+    func topicUpdateCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator?
 }
 
 public extension MessagesLayoutDelegate {
@@ -287,6 +289,10 @@ public extension MessagesLayoutDelegate {
     }
     
     func topicCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator? {
+        return nil
+    }
+    
+    func topicUpdateCellSizeCalculator(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator? {
         return nil
     }
 }

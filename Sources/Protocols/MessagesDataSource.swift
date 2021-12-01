@@ -172,6 +172,9 @@ public protocol MessagesDataSource: AnyObject {
     /// Topic collectionView cell for message with `topic` message type.
     func topicCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell?
     
+    /// Topic Update collectionView cell for message with `topic` message type.
+    func topicUpdateCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell?
+    
     /// Custom collectionView cell for message with `custom` message type.
     ///
     /// - Parameters:
@@ -252,6 +255,10 @@ public extension MessagesDataSource {
     }
     
     func topicCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell? {
+        return nil
+    }
+    
+    func topicUpdateCell(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell? {
         return nil
     }
     
