@@ -191,7 +191,7 @@ public protocol MessagesDisplayDelegate: AnyObject {
     
     func configureTopicCell(_ cell: TopicMessageCell, message: MessageType)
     
-    func configureTopicUpdateCell(_ cell: TopicMessageCell, message: MessageType)
+    func configureTopicUpdateCell(_ cell: TopicUpdateMessageCell, message: MessageType)
 
     /// Specifies the tint color of play button and progress bar for an `AudioMessageCell`.
     ///
@@ -308,7 +308,7 @@ public extension MessagesDisplayDelegate {
         
     }
     
-    func configureTopicUpdateCell(_ cell: TopicMessageCell, message: MessageType) {
+    func configureTopicUpdateCell(_ cell: TopicUpdateMessageCell, message: MessageType) {
         
     }
 

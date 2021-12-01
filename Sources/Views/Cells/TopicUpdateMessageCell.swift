@@ -55,6 +55,6 @@ open class TopicUpdateMessageCell: MessageContentCell {
             fatalError(MessageKitError.nilMessagesDisplayDelegate)
         }
         
-        displayDelegate.configureTopicCell(self, message: message)
+        displayDelegate.configureTopicUpdateCell(self, message: message)
     }
 }
