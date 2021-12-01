@@ -27,7 +27,7 @@ open class TopicUpdateMessageCell: MessageContentCell {
         questionLabel.translatesAutoresizingMaskIntoConstraints = false
         questionLabel.leadingAnchor.constraint(equalTo: messageContainerView.leadingAnchor, constant: 16).isActive = true
         questionLabel.topAnchor.constraint(equalTo: messageContainerView.topAnchor, constant: 16).isActive = true
-        questionLabel.bottomAnchor.constrant(equalTo: messageContainerView.bottomAnchor, constant: 16).isActive = true
+        questionLabel.bottomAnchor.constraint(equalTo: messageContainerView.bottomAnchor, constant: 16).isActive = true
         
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
