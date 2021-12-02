@@ -12,6 +12,7 @@ open class TopicMessageCell: MessageContentCell {
     
     public lazy var replyButton: UIButton = {
         let replyButton = UIButton(type: .system)
+        replyButton.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         return replyButton
     }()
     
