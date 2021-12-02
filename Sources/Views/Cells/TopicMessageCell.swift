@@ -89,6 +89,20 @@ open class TopicMessageCell: MessageContentCell {
         questionLabel.font = UIFont.systemFont(ofSize: isReply ? 13 : 17)
     }
     
+    /// Handle tap gesture on contentView and its subviews.
+    open override func handleTapGesture(_ gesture: UIGestureRecognizer) {
+        let touchLocation = gesture.location(in: self)
+        // compute play button touch area, currently play button size is (25, 25) which is hardly touchable
+        // add 10 px around current button frame and test the touch against this new frame
+        let replyButtonTouchArea = CGRect(replyButton.frame.origin.x, replyButton.frame.origin.y, replyButton.frame.size.width, replyButton.frame.size.height)
+        let translateTouchLocation = convert(touchLocation, to: messageContainerView)
+        if replyButtonTouchArea.contains(translateTouchLocation) {
+            delegate?.tapReplyButton(in: self)
+        } else {
+            super.handleTapGesture(gesture)
+        }
+    }
+    
     // MARK: - Configure Cell
     
     open override func configure(with message: MessageType, at indexPath: IndexPath, and messagesCollectionView: MessagesCollectionView) {
