@@ -10,6 +10,8 @@ import UIKit
 
 public protocol TopicUpdateItem {
     
+    var topicId: String { get }
+    
     var description: String { get }
     
     var messageId: String { get }
