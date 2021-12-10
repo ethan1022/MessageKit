@@ -34,13 +34,17 @@ open class TopicMessageCell: MessageContentCell {
         isReplyLabel.textColor = UIColor(hex: 0x343637)
         isReplyLabel.font = UIFont.systemFont(ofSize: 17)
         isReplyLabel.numberOfLines = 1
-//        isReplyLabel.text = "兩人都已經回應話題！"
         return isReplyLabel
     }()
     
     public lazy var saperatorView: UIView = {
         let saperatorView = UIView(frame: .zero)
         return saperatorView
+    }()
+    
+    public lazy var isReplyLabelHeightConstraint: NSLayoutConstraint = {
+        let isReplyLabelHeightConstraint = isReplyLabel.heightAnchor.constraint(equalToConstant: 0)
+        return isReplyLabelHeightConstraint
     }()
     
     
@@ -70,6 +74,7 @@ open class TopicMessageCell: MessageContentCell {
         isReplyLabel.leadingAnchor.constraint(equalTo: messageContainerView.leadingAnchor, constant: 16).isActive = true
         isReplyLabel.trailingAnchor.constraint(equalTo: messageContainerView.trailingAnchor, constant: -16).isActive = true
         isReplyLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 6).isActive = true
+        isReplyLabelHeightConstraint.isActive = true
         
         saperatorView.translatesAutoresizingMaskIntoConstraints = false
         saperatorView.heightAnchor.constraint(equalToConstant: 1).isActive = true
@@ -86,7 +91,7 @@ open class TopicMessageCell: MessageContentCell {
     }
     
     open func tuneUI(by isReply: Bool) {
-        isReplyLabel.heightAnchor.constraint(equalToConstant: isReply ? 24 : 0).isActive = true
+        isReplyLabelHeightConstraint.constant = isReply ? 24 : 0
         questionLabel.font = UIFont.systemFont(ofSize: isReply ? 13 : 17)
     }
     
